@@ -1,1 +1,1 @@
-worker: python Phase2.py
+web: python Phase2.py
