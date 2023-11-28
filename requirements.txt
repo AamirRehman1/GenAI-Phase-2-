@@ -1,6 +1,7 @@
-Flask
-Flask-SocketIO
-eventlet
-Flask-WTF
+Flask==2.1.2  # Or the version you are using
+Flask-SocketIO==5.1.1  # Or the version you are using
+python-socketio[client]==5.5.1  # Or the version compatible with your Flask-SocketIO
+eventlet==0.33.0  # Or gevent, if you prefer; for concurrency
+
 
 
