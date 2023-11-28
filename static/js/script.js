@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const projectNameForm = document.getElementById('project-name-form');
+
     // Function to handle clicking on an editable task
     const editTask = (event) => {
         let task = event.target;
@@ -13,13 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inputField.onblur = () => {
             task.innerHTML = inputField.value;
-            // You can add an event to save the new task value to your server here
+            // Add an event to save the new task value to your server here
         };
     };
 
-    // Add click event listener to all editable tasks
-    document.querySelectorAll('.editable').forEach(task => {
-        task.addEventListener('click', editTask);
-    });
+    // If we're on the index page with the form
+    if (projectNameForm) {
+        projectNameForm.onsubmit = (e) => {
+            e.preventDefault();
+            const projectName = document.getElementById('project-name').value;
+            // Redirect to the WBS diagram page with the project name
+            window.location.href = `/wbs_diagram?project_name=${encodeURIComponent(projectName)}`;
+        };
+    } else {
+        // We're on the WBS page, so set up editable tasks
+        document.querySelectorAll('.editable').forEach(task => {
+            task.addEventListener('click', editTask);
+        });
+    }
 });
-
