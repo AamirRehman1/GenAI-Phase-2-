@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Breakdown Structure</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="wbs-container">
+        <header class="wbs-header">
+            <h1 id="project-title"><Project Title></h1>
+        </header>
+        <div class="wbs-row">
+            <!-- Repeat the following block for each phase of the project -->
+            <div class="wbs-column">
+                <h2 class="wbs-phase-title">Preparation</h2>
+                <div class="wbs-task">Identify Vision</div>
+                <div class="wbs-task">Design and Staffing</div>
+                <div class="wbs-task editable">Other Task</div> <!-- Class 'editable' indicates the user can edit this task -->
+                <!-- ... other tasks ... -->
+            </div>
+            <!-- ... other columns for different phases ... -->
+        </div>
+    </div>
+</body>
+</html>
 
