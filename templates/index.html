@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Project Name</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="project-entry-container">
+        <form id="project-name-form" action="/create_project" method="post">
+            <label for="project-name">Enter Project Name:</label>
+            <input type="text" id="project-name" name="project_name" required>
+            <button type="submit">Create Project</button>
+        </form>
+    </div>
+</body>
+</html>
 
