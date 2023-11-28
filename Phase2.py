@@ -1,15 +1,24 @@
-import os
-from flask import Flask
+from flask import Flask, render_template, request
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 
 @app.route('/')
-def hello():
-    return 'Hello, World!'
+def index():
+    return render_template('index.html')
 
-if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
+@app.route('/project/<project_name>')
+def project(project_name):
+    return render_template('project.html', project_name=project_name)
+
+@socketio.on('create_project')
+def create_project(data):
+    project_name = data['project_name']
+    emit('redirect', {'url': f'/project/{project_name}'})
+
+if __name__ == '__main__':
+    socketio.run(app, debug=True)
 
 
 
