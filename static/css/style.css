@@ -63,33 +63,30 @@ body {
     margin: 0 10px;
 }
 
-.wbs-phase-title {
+.wbs-phase-title, .editable-title {
     text-align: center;
     color: #3a3a3a;
     background-color: #e3e3e3;
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
+    cursor: pointer; 
 }
 
-.wbs-task {
+.wbs-task, .editable {
     background-color: #e8f5e9;
     color: #256029;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.editable {
     border: 1px dashed #999;
     cursor: pointer;
 }
 
-/* Input for editing tasks */
-.task-input {
+.task-input, .title-input {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; 
 }
