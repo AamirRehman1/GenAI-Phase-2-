@@ -50,7 +50,7 @@ body {
 
 #wbs-header h1 {
     color: #333;
-    text-align: center;
+    text-align: center; 
 }
 
 .wbs-row {
@@ -70,7 +70,7 @@ body {
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .wbs-task, .editable {
@@ -88,5 +88,5 @@ body {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
 }
