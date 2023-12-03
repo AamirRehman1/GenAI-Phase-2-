@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let column = this.parentElement;
             let newTask = document.createElement('div');
             newTask.className = 'wbs-task editable';
-            newTask.textContent = 'New Task';
+            newTask.textContent = 'Task';
             column.insertBefore(newTask, this)
         });
     });
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let column = this.parentElement; // Get the parent column
             let newTask = document.createElement('div');
             newTask.className = 'wbs-task editable';
-            newTask.textContent = 'Task <button class="delete-btn">×</button>';
+            newTask.textContent = 'Task';
              column.insertBefore(newTask, this); // Append the new task to the column
         });
     });
