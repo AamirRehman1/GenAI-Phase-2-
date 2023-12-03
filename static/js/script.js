@@ -3,36 +3,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectNameForm = document.getElementById('project-name-form');
 
     const editTask = (event) => {
-        let task = event.target;
-        let currentText = task.textContent;
+    let task = event.target;
+    let deleteBtn = task.querySelector('.delete-btn');
+
+    // Check if the delete button exists
+    if (deleteBtn) {
+        // Store the delete button HTML
+        let deleteBtnHTML = deleteBtn.outerHTML;
+
+        // Get the task text excluding the delete button
+        let currentText = task.textContent.replace(deleteBtn.textContent, '').trim();
+
         let inputField = document.createElement('input');
         inputField.type = 'text';
         inputField.value = currentText;
         inputField.className = 'task-input';
+
+        // Clear the task content and append the input field
         task.innerHTML = '';
         task.appendChild(inputField);
         inputField.focus();
 
         inputField.onblur = () => {
-            task.innerHTML = inputField.value;
+            // Update the task content and re-insert the delete button HTML
+            task.innerHTML = inputField.value + deleteBtnHTML;
         };
-    };
+    }
+};
+
 
     const editTitle = (event) => {
-        let title = event.target;
-        let currentText = title.textContent;
+    let title = event.target;
+    let deleteBtn = title.querySelector('.delete-btn');
+
+    // Check if the delete button exists
+    if (deleteBtn) {
+        // Store the delete button HTML
+        let deleteBtnHTML = deleteBtn.outerHTML;
+
+        // Get the title text excluding the delete button
+        let currentText = title.textContent.replace(deleteBtn.textContent, '').trim();
+
         let inputField = document.createElement('input');
         inputField.type = 'text';
         inputField.value = currentText;
         inputField.className = 'title-input';
+
+        // Clear the title content and append the input field
         title.innerHTML = '';
         title.appendChild(inputField);
         inputField.focus();
 
         inputField.onblur = () => {
-            title.innerHTML = inputField.value;
+            // Update the title content and re-insert the delete button HTML
+            title.innerHTML = inputField.value + deleteBtnHTML;
         };
-    };
+    }
+};
+
 
     if (projectNameForm) {
         projectNameForm.onsubmit = (e) => {
