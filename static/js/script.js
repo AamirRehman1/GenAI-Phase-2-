@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         newColumn.className = 'wbs-column';
         newColumn.innerHTML = `
             <h2 class="wbs-phase-title editable-title">New Phase <button class="delete-btn">x</button> </h2>
-            <div class="wbs-task editable">Task <button class="delete-btn"> </button> </div>
-            <div class="wbs-task editable">Task <button class="delete-btn"> </button> </div>
+            <div class="wbs-task editable">Task <button class="delete-btn">x</button> </div>
+            <div class="wbs-task editable">Task <button class="delete-btn">x</button> </div>
             <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
             <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
             <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
