@@ -78,7 +78,7 @@ body {
     cursor: pointer;
     height: 50px;
     overflow: hidden;
-    min-width: 150px;
+    min-width: 140px;
 }
 
 .wbs-task, .editable {
