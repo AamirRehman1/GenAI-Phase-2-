@@ -95,7 +95,7 @@ body {
 
 /* CHANGED: Styles for add column button */
 .add-column-btn {
-    padding: 8px 8px;
+    padding: 6px 4px;
     font-size: 0.8em;
     background-color: #4CAF50;
     color: white;
@@ -104,5 +104,5 @@ body {
     cursor: pointer;
     position: absolute; /*CHANGED: Position the add button absolutely*/
     top: 155px; /*CHANGED: Adjust top position*/
-    right: 2px; /*CHANGED: Place it to the right side*/
+    right: 4px; /*CHANGED: Place it to the right side*/
 }
