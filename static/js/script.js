@@ -2,41 +2,84 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
 
-    const editTaskOrTitle = (element) => {
-    let currentText = '';
-    for (let node of element.childNodes) {
-        if (node.nodeType === Node.TEXT_NODE) {
-            currentText += node.textContent;
-        }
+    const editElement = (element) => {
+    let deleteBtn = element.querySelector('.delete-btn');
+    if (deleteBtn) {
+        // Temporarily remove the delete button
+        element.removeChild(deleteBtn);
     }
+
+    // Capture the text content with the delete button removed
+    let currentText = element.textContent;
+
+    if (deleteBtn) {
+        // Reinsert the delete button
+        element.appendChild(deleteBtn);
+    }
+
     return currentText.trim();
 };
+
+// Update in editTask function
+inputField.value = editElement(task);
+
+// Update in editTitle function
+inputField.value = editElement(title);
+
 
 
     const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
-    let currentText = editTaskOrTitle(task); // Use the helper function to get text
+    if (deleteBtn) {
+        // Temporarily remove the delete button
+        task.removeChild(deleteBtn);
+    }
+    // Capture the text content with the delete button removed
+    let currentText = task.textContent.trim();
     let inputField = document.createElement('input');
-    // ... setup inputField ...
+    inputField.type = 'text';
+    inputField.value = currentText;
+    inputField.className = 'task-input';
+    task.innerHTML = '';
+    task.appendChild(inputField);
+    inputField.focus();
     inputField.onblur = () => {
         task.innerHTML = inputField.value;
-        task.appendChild(deleteBtn); // Re-append the delete button
+        if (deleteBtn) {
+            // Reinsert the delete button
+            task.appendChild(deleteBtn);
+        }
     };
 };
+
 
 
     const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
-    let currentText = editTaskOrTitle(title); // Use the helper function to get text
+    if (deleteBtn) {
+        // Temporarily remove the delete button
+        title.removeChild(deleteBtn);
+    }
+    // Capture the text content with the delete button removed
+    let currentText = title.textContent.trim();
     let inputField = document.createElement('input');
-    // ... setup inputField ...
+    inputField.type = 'text';
+    inputField.value = currentText;
+    inputField.className = 'title-input';
+    title.innerHTML = '';
+    title.appendChild(inputField);
+    inputField.focus();
     inputField.onblur = () => {
         title.innerHTML = inputField.value;
-        title.appendChild(deleteBtn); // Re-append the delete button
+        if (deleteBtn) {
+            // Reinsert the delete button
+            title.appendChild(deleteBtn);
+        }
     };
 };
+
     
     if (projectNameForm) {
         projectNameForm.onsubmit = (e) => {
