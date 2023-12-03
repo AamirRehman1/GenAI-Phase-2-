@@ -53,7 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Functionality to add a new column
     document.getElementById('add-column-btn').addEventListener('click', function() {
+        console.log("Add column button clicked");
         var wbsRow = document.getElementById('wbs-row');
+        console.log("wbsRow:", wbsRow);
         var newColumn = document.createElement('div');
         newColumn.className = 'wbs-column';
         newColumn.innerHTML = `
