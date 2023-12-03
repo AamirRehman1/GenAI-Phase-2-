@@ -82,6 +82,7 @@ body {
     height: 50px;
     overflow: hidden;
     min-width: 140px;
+    position: relative;
 }
 
 .wbs-task, .editable {
@@ -94,6 +95,7 @@ body {
     border: 1px dashed #999;
     cursor: pointer;
     min-height: 20px;
+    position: relative;
 }
 
 .task-input, .title-input {
