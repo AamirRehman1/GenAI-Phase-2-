@@ -127,5 +127,5 @@ body {
     display: block; /* To make the button a block element */
     width: 10%; /* To expand the button to the full width of the column */
     margin-top: 5px; /* Space above the button */
-    min-width: 25px;
+    min-width: 20px;
 }
