@@ -65,13 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="wbs-task editable">Task</div>
             <div class="wbs-task editable">Task</div>
             <div class="wbs-task editable">Task</div>
-            <button class="add-task-btn">+</button>
         `; // 
         wbsRow.appendChild(newColumn); // 
     });
 
     // Functionality to add a new task
-    newColumn.querySelector('.add-task-btn').addEventListener('click', function() {
+    document.querySelectorAll('.add-task-btn').forEach(button => {
+        button.addEventListener('click', function() {
             let column = this.parentElement; // Get the parent column
             let newTask = document.createElement('div');
             newTask.className = 'wbs-task editable';
