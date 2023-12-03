@@ -56,9 +56,9 @@ body {
 }
 
 .wbs-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
 }
 
 .wbs-column {
@@ -91,8 +91,6 @@ body {
     border: 1px dashed #999;
     cursor: pointer;
     min-height: 20px;
-    display: flex;
-    align-items: center;
 }
 
 .task-input, .title-input {
