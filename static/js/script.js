@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const editTask = (event) => {
         let task = event.target;
-        let deleteBtn = task.querySelector('.delete-btn');
-        let currentText = task.textContent.replace(deleteBtn.outerHTML, '');
+        let currentText = task.textContent;
         let inputField = document.createElement('input');
         inputField.type = 'text';
         inputField.value = currentText;
@@ -16,14 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inputField.onblur = () => {
             task.innerHTML = inputField.value;
-            task.appendChild(deleteBtn);
         };
     };
 
     const editTitle = (event) => {
         let title = event.target;
-        let deleteBtn = task.querySelector('.delete-btn');
-        let currentText = title.textContent.replace(deleteBtn.outerHTML, '');
+        let currentText = title.textContent;
         let inputField = document.createElement('input');
         inputField.type = 'text';
         inputField.value = currentText;
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inputField.onblur = () => {
             title.innerHTML = inputField.value;
-            task.appendChild(deleteBtn);
         };
     };
 
