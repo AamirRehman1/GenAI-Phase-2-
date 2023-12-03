@@ -65,17 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="wbs-task editable">Task</div>
             <div class="wbs-task editable">Task</div>
             <div class="wbs-task editable">Task</div>
-            <button class="add-task-btn">+</button>
         `; // 
         wbsRow.appendChild(newColumn); //
-
-         // Add click event listener to the 'Add Task' button in the new column
-        newColumn.querySelector('.add-task-btn').addEventListener('click', function() {
-            let column = this.parentElement;
-            let newTask = document.createElement('div');
-            newTask.className = 'wbs-task editable';
-            newTask.textContent = 'New Task';
-            column.appendChild(newTask);
     });
 
     // Functionality to add a new task
