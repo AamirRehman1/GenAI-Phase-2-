@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Index Page Styles */
+.project-entry-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#project-name-form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#project-name-form input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#project-name-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* WBS Page Styles */
+.wbs-container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative; /*CHANGED: Added for positioning the add button*/
+}
+
+.wbs-header {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center; /* No Change */
+}
+
+#wbs-header h1 {
+    color: #333;
+    /* No Change */
+}
+
+.wbs-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wbs-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.wbs-phase-title, .editable-title {
+    text-align: center;
+    color: #3a3a3a;
+    background-color: #e3e3e3;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.wbs-task, .editable {
+    background-color: #e8f5e9;
+    color: #256029;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px dashed #999;
+    cursor: pointer;
+}
+
+.task-input, .title-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* CHANGED: Styles for add column button */
+.add-column-btn {
+    padding: 4px 6px;
+    font-size: 0.8em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /*CHANGED: Position the add button absolutely*/
+    top: 159px; /*CHANGED: Adjust top position*/
+    right: 5px; /*CHANGED: Place it to the right side*/
+}
