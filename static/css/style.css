@@ -58,6 +58,8 @@ body {
 .wbs-row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .wbs-column {
