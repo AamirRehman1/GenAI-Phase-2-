@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
 
     const editTask = (event) => {
