@@ -144,7 +144,7 @@ body {
     border-radius: 50%;
     border: none;
     width: 18px;
-    height: 15px;
+    height: 16px;
     cursor: pointer;
     display: none; /* Hide by default */
 }
