@@ -89,6 +89,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Functionality to handle delete button clicks
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('delete-btn')) {
+            if (event.target.parentElement.classList.contains('wbs-phase-title')) {
+                // Delete the entire column
+                event.target.closest('.wbs-column').remove();
+            } else if (event.target.parentElement.classList.contains('wbs-task')) {
+                // Delete the individual task
+                event.target.parentElement.remove();
+            }
+        }
+    });
+
     // Event Delegation for Editable Tasks and Titles
     document.getElementById('wbs-row').addEventListener('click', function(event) {
         // Check if the clicked element is an editable task
