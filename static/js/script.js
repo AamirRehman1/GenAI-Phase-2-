@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     deleteBtnTitle.className = 'delete-btn';
     deleteBtnTitle.textContent = 'x';
     newTitle.appendChild(deleteBtnTitle);
+    newTitle.addEventListener('click', editTitle);
 
     // Create and append tasks
     for (let i = 0; i < 5; i++) {
@@ -101,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newTask.appendChild(deleteBtnTask);
 
         newColumn.appendChild(newTask);
+        newTask.addEventListener('click', editTask);
     }
 
     // Create and append the 'Add Task' button
