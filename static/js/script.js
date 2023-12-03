@@ -69,6 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
         wbsRow.appendChild(newColumn); // 
     });
 
+    // Functionality to add a new task
+    document.querySelectorAll('.add-task-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            let column = this.parentElement; // Get the parent column
+            let newTask = document.createElement('div');
+            newTask.className = 'wbs-task editable';
+            newTask.textContent = 'New Task';
+            column.appendChild(newTask); // Append the new task to the column
+        });
+    });
+
     // Event Delegation for Editable Tasks and Titles
     document.getElementById('wbs-row').addEventListener('click', function(event) {
         // Check if the clicked element is an editable task
