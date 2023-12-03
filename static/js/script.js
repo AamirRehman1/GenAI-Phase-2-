@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
 
-    const editTask = (element) => {
+    const editTaskOrTitle = (element) => {
     let currentText = '';
     for (let node of element.childNodes) {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -10,19 +10,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     return currentText.trim();
-    inputField.value = editTask(task);
 };
 
-    const editTitle = (element) => {
-    let currentText = '';
-    for (let node of element.childNodes) {
-        if (node.nodeType === Node.TEXT_NODE) {
-            currentText += node.textContent;
-        }
-    }
-    return currentText.trim();
-    inputField.value = editTitle(title);
+    const editTask = (event) => {
+    let task = event.target;
+    let deleteBtn = task.querySelector('.delete-btn');
+
+    let currentText = editTaskOrTitle(task); // Use the helper function to get text
+
+    let inputField = document.createElement('input');
+    // ... setup inputField ...
+    inputField.onblur = () => {
+        task.innerHTML = inputField.value;
+        task.appendChild(deleteBtn); // Re-append the delete button
+    };
 };
+
+
+    const editTitle = (event) => {
+    let title = event.target;
+    let deleteBtn = title.querySelector('.delete-btn');
+
+    let currentText = editTaskOrTitle(title); // Use the helper function to get text
+
+    let inputField = document.createElement('input');
+    // ... setup inputField ...
+    inputField.onblur = () => {
+        title.innerHTML = inputField.value;
+        title.appendChild(deleteBtn); // Re-append the delete button
+    };
+};
+
 
     if (projectNameForm) {
         projectNameForm.onsubmit = (e) => {
