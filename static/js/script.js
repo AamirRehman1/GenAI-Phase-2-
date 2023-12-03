@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         inputField.onblur = () => {
             task.innerHTML = inputField.value;
             task.appendChild(deleteBtn);
-            // Optionally, send the updated task to the server here
         };
     };
 
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         inputField.onblur = () => {
             title.innerHTML = inputField.value;
             task.appendChild(deleteBtn);
-            // Optionally, send the updated title to the server here
         };
     };
 
