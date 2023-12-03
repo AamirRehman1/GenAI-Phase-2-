@@ -57,7 +57,9 @@ body {
 
 .wbs-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: stretch;
 }
 
 .wbs-column {
@@ -90,6 +92,8 @@ body {
     border: 1px dashed #999;
     cursor: pointer;
     min-height: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .task-input, .title-input {
