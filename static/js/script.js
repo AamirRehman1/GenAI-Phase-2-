@@ -2,32 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
 
-    const editElement = (element) => {
-    let deleteBtn = element.querySelector('.delete-btn');
-    if (deleteBtn) {
-        // Temporarily remove the delete button
-        element.removeChild(deleteBtn);
-    }
-
-    // Capture the text content with the delete button removed
-    let currentText = element.textContent;
-
-    if (deleteBtn) {
-        // Reinsert the delete button
-        element.appendChild(deleteBtn);
-    }
-
-    return currentText.trim();
-};
-
-// Update in editTask function
-inputField.value = editElement(task);
-
-// Update in editTitle function
-inputField.value = editElement(title);
-
-
-
     const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
