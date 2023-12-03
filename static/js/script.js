@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
         var newColumn = document.createElement('div');
         newColumn.className = 'wbs-column';
         newColumn.innerHTML = `
-            <h2 class="wbs-phase-title editable-title">New Phase</h2>
-            <div class="wbs-task editable">Task</div>
-            <div class="wbs-task editable">Task</div>
-            <div class="wbs-task editable">Task</div>
-            <div class="wbs-task editable">Task</div>
-            <div class="wbs-task editable">Task</div>
+            <h2 class="wbs-phase-title editable-title">New Phase <button class="delete-btn">×</button> </h2>
+            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
+            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
+            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
+            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
+            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
             <button class="add-task-btn">+</button>
         `; // 
         wbsRow.appendChild(newColumn); //
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let column = this.parentElement; // Get the parent column
             let newTask = document.createElement('div');
             newTask.className = 'wbs-task editable';
-            newTask.textContent = 'New Task';
+            newTask.textContent = 'Task <button class="delete-btn">×</button>';
              column.insertBefore(newTask, this); // Append the new task to the column
         });
     });
