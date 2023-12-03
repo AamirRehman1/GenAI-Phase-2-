@@ -103,6 +103,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     position: absolute; /*CHANGED: Position the add button absolutely*/
-    top: 155px; /*CHANGED: Adjust top position*/
-    right: 4px; /*CHANGED: Place it to the right side*/
+    top: 158px; /*CHANGED: Adjust top position*/
+    right: 5px; /*CHANGED: Place it to the right side*/
 }
