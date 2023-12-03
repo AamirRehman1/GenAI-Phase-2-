@@ -138,12 +138,12 @@ body {
 .delete-btn {
     position: absolute;
     top: 0;
-    right: 2;
+    right: 0;
     background-color: red;
     color: white;
     border-radius: 50%;
     border: none;
-    width: 15px;
+    width: 18px;
     height: 15px;
     cursor: pointer;
     display: none; /* Hide by default */
