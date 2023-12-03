@@ -63,6 +63,9 @@ body {
 .wbs-column {
     flex: 1;
     margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .wbs-phase-title, .editable-title {
@@ -86,7 +89,7 @@ body {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     border: 1px dashed #999;
     cursor: pointer;
-    margin-top: 10px;
+    
 }
 
 .task-input, .title-input {
