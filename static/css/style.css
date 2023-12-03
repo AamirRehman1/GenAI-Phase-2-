@@ -107,7 +107,7 @@ body {
     padding: 4px 6px;
     font-size: 0.8em;
     background-color: #e3e3e3;
-    color: white;
+    color: #3a3a3a;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -119,8 +119,8 @@ body {
 .add-task-btn {
     padding: 4px 6px;
     font-size: 0.8em;
-    background-color: #4CAF50;
-    color: #3a3a3a;
+    background-color: #e8f5e9;
+    color: #256029;
     border: none;
     border-radius: 5px;
     cursor: pointer;
