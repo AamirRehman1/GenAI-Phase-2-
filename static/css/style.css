@@ -115,3 +115,16 @@ body {
     top: 172px; /*CHANGED: Adjust top position*/
     right: 5px; /*CHANGED: Place it to the right side*/
 }
+
+.add-task-btn {
+    padding: 4px 6px;
+    font-size: 0.8em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* To make the button a block element */
+    width: 10%; /* To expand the button to the full width of the column */
+    margin-top: 10px; /* Space above the button */
+}
