@@ -12,12 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return currentText.trim();
 };
 
+
     const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
-
     let currentText = editTaskOrTitle(task); // Use the helper function to get text
-
     let inputField = document.createElement('input');
     // ... setup inputField ...
     inputField.onblur = () => {
@@ -30,9 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
-
     let currentText = editTaskOrTitle(title); // Use the helper function to get text
-
     let inputField = document.createElement('input');
     // ... setup inputField ...
     inputField.onblur = () => {
@@ -40,8 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title.appendChild(deleteBtn); // Re-append the delete button
     };
 };
-
-
+    
     if (projectNameForm) {
         projectNameForm.onsubmit = (e) => {
             e.preventDefault();
