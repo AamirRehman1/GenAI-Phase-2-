@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inputField.onblur = () => {
             task.innerHTML = inputField.value;
+            // Optionally, send the updated task to the server here
         };
     };
 
@@ -23,13 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let inputField = document.createElement('input');
         inputField.type = 'text';
         inputField.value = currentText;
-        inputField.className = 'title-input'; 
+        inputField.className = 'title-input';
         title.innerHTML = '';
         title.appendChild(inputField);
         inputField.focus();
 
         inputField.onblur = () => {
-            title.innerHTML = inputField.value; 
+            title.innerHTML = inputField.value;
+            // Optionally, send the updated title to the server here
         };
     };
 
@@ -43,8 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.editable').forEach(task => {
             task.addEventListener('click', editTask);
         });
-        document.querySelectorAll('.editable-title').forEach(title => { 
-            title.addEventListener('click', editTitle); 
+        document.querySelectorAll('.editable-title').forEach(title => {
+            title.addEventListener('click', editTitle);
         });
     }
+
+    // Functionality to add a new column
+    document.getElementById('add-column-btn').addEventListener('click', function() {
+        var wbsRow = document.getElementById('wbs-row');
+        var newColumn = document.createElement('div');
+        newColumn.className = 'wbs-column';
+        newColumn.innerHTML = `
+            <h2 class="wbs-phase-title editable-title">New Phase</h2>
+            <div class="wbs-task editable">Task</div>
+            <div class="wbs-task editable">Task</div>
+            <div class="wbs-task editable">Task</div>
+            <div class="wbs-task editable">Task</div>
+            <div class="wbs-task editable">Task</div>
+        `; // 
+        wbsRow.appendChild(newColumn); // 
+    });
+
 });
