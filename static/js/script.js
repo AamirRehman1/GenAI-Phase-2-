@@ -51,30 +51,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Functionality to add a new column
     document.getElementById('add-column-btn').addEventListener('click', function() {
-        console.log("Add column button clicked");
-        var wbsRow = document.getElementById('wbs-row');
-        console.log("wbsRow:", wbsRow);
-        var newColumn = document.createElement('div');
-        newColumn.className = 'wbs-column';
-        newColumn.innerHTML = `
-            <h2 class="wbs-phase-title editable-title">New Phase <button class="delete-btn">x</button> </h2>
-            <div class="wbs-task editable">Task <button class="delete-btn">x</button> </div>
-            <div class="wbs-task editable">Task <button class="delete-btn">x</button> </div>
-            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
-            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
-            <div class="wbs-task editable">Task <button class="delete-btn">×</button> </div>
-            <button class="add-task-btn">+</button>
-        `; // 
-        wbsRow.appendChild(newColumn); //
-        // Add click event listener to the 'Add Task' button in the new column
-        newColumn.querySelector('.add-task-btn').addEventListener('click', function() {
-            let column = this.parentElement;
-            let newTask = document.createElement('div');
-            newTask.className = 'wbs-task editable';
-            newTask.textContent = 'Task';
-            column.insertBefore(newTask, this)
-        });
+    var wbsRow = document.getElementById('wbs-row');
+    var newColumn = document.createElement('div');
+    newColumn.className = 'wbs-column';
+
+    // Create and append the phase title
+    var newTitle = document.createElement('h2');
+    newTitle.className = 'wbs-phase-title editable-title';
+    newTitle.textContent = 'New Phase';
+    newColumn.appendChild(newTitle);
+
+    // Create and append the delete button for the phase title
+    var deleteBtnTitle = document.createElement('button');
+    deleteBtnTitle.className = 'delete-btn';
+    deleteBtnTitle.textContent = 'x';
+    newTitle.appendChild(deleteBtnTitle);
+
+    // Create and append tasks
+    for (let i = 0; i < 5; i++) {
+        var newTask = document.createElement('div');
+        newTask.className = 'wbs-task editable';
+        newTask.textContent = 'Task';
+
+        // Create and append the delete button for each task
+        var deleteBtnTask = document.createElement('button');
+        deleteBtnTask.className = 'delete-btn';
+        deleteBtnTask.textContent = 'x';
+        newTask.appendChild(deleteBtnTask);
+
+        newColumn.appendChild(newTask);
+    }
+
+    // Create and append the 'Add Task' button
+    var addTaskBtn = document.createElement('button');
+    addTaskBtn.className = 'add-task-btn';
+    addTaskBtn.textContent = '+';
+    newColumn.appendChild(addTaskBtn);
+
+    wbsRow.appendChild(newColumn);
+
+    // Add event listener for the new 'Add Task' button
+    addTaskBtn.addEventListener('click', function() {
+        let column = this.parentElement;
+        let newTask = document.createElement('div');
+        newTask.className = 'wbs-task editable';
+        newTask.textContent = 'Task';
+        column.insertBefore(newTask, this);
     });
+});
+
 
     // Functionality to add a new task
     document.querySelectorAll('.add-task-btn').forEach(button => {
