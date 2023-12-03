@@ -132,3 +132,22 @@ body {
     min-width: 20px;
     margin: 10px auto;
 }
+
+.delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none; /* Hide by default */
+}
+
+.wbs-phase-title:hover .delete-btn,
+.wbs-task:hover .delete-btn {
+    display: block; /* Show on hover */
+}
