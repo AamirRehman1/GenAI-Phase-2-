@@ -2,37 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
 
-    const editTask = (event) => {
-        let task = event.target;
-        let currentText = task.textContent;
-        let inputField = document.createElement('input');
-        inputField.type = 'text';
-        inputField.value = currentText;
-        inputField.className = 'task-input';
-        task.innerHTML = '';
-        task.appendChild(inputField);
-        inputField.focus();
+    const editTask = (element) => {
+    let currentText = '';
+    for (let node of element.childNodes) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            currentText += node.textContent;
+        }
+    }
+    return currentText.trim();
+    inputField.value = editTask(task);
+};
 
-        inputField.onblur = () => {
-            task.innerHTML = inputField.value;
-        };
-    };
-
-    const editTitle = (event) => {
-        let title = event.target;
-        let currentText = title.textContent;
-        let inputField = document.createElement('input');
-        inputField.type = 'text';
-        inputField.value = currentText;
-        inputField.className = 'title-input';
-        title.innerHTML = '';
-        title.appendChild(inputField);
-        inputField.focus();
-
-        inputField.onblur = () => {
-            title.innerHTML = inputField.value;
-        };
-    };
+    const editTitle = (element) => {
+    let currentText = '';
+    for (let node of element.childNodes) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            currentText += node.textContent;
+        }
+    }
+    return currentText.trim();
+    inputField.value = editTitle(title);
+};
 
     if (projectNameForm) {
         projectNameForm.onsubmit = (e) => {
