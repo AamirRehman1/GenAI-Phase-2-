@@ -114,6 +114,7 @@ body {
     position: absolute; /*CHANGED: Position the add button absolutely*/
     top: 172px; /*CHANGED: Adjust top position*/
     right: 5px; /*CHANGED: Place it to the right side*/
+    min-width: 20px;
 }
 
 .add-task-btn {
