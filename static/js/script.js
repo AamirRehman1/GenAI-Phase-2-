@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let newTask = document.createElement('div');
             newTask.className = 'wbs-task editable';
             newTask.textContent = 'New Task';
-            column.appendChild(newTask); // Append the new task to the column
+            column.insertBefore(newTask, this)
         });
     });
 
