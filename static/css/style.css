@@ -57,13 +57,17 @@ body {
 
 .wbs-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allows scrolling horizontally if columns overflow */
 }
 
 .wbs-column {
-    flex: 1;
+    flex: 1 0 auto; /* CHANGED: flex-grow, flex-shrink and flex-basis values */
+    min-width: 200px; /* CHANGED: Minimum width for a column */
     margin: 0 10px;
 }
+
 
 .wbs-phase-title, .editable-title {
     text-align: center;
