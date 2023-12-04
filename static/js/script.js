@@ -5,56 +5,46 @@ document.addEventListener('DOMContentLoaded', () => {
    const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
-    let currentText = task.textContent.trim();
-
-    // Create a container for the text and delete button
-    let textContainer = document.createElement('div');
-    textContainer.className = 'text-container';
-    task.innerHTML = '';
-    task.appendChild(textContainer);
-
-    // Move the delete button and add the input field
     if (deleteBtn) {
-        textContainer.appendChild(deleteBtn);
+        deleteBtn.style.display = 'none';
     }
+    let currentText = task.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'task-input';
-    textContainer.appendChild(inputField);
+    task.innerHTML = '';
+    task.appendChild(inputField);
     inputField.focus();
-
     inputField.onblur = () => {
-        // Replace only the text, not the entire container's content
-        textContainer.textContent = inputField.value;
+        task.textContent = inputField.value;
+        if (deleteBtn) {
+            task.appendChild(deleteBtn);
+            deleteBtn.style.display = 'block';
+        }
     };
 };
 
 const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
-    let currentText = title.textContent.trim();
-
-    // Create a container for the text and delete button
-    let textContainer = document.createElement('div');
-    textContainer.className = 'text-container';
-    title.innerHTML = '';
-    title.appendChild(textContainer);
-
-    // Move the delete button and add the input field
     if (deleteBtn) {
-        textContainer.appendChild(deleteBtn);
+        deleteBtn.style.display = 'none';
     }
+    let currentText = title.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'title-input';
-    textContainer.appendChild(inputField);
+    title.innerHTML = '';
+    title.appendChild(inputField);
     inputField.focus();
-
     inputField.onblur = () => {
-        // Replace only the text, not the entire container's content
-        textContainer.textContent = inputField.value;
+        title.textContent = inputField.value;
+        if (deleteBtn) {
+            title.appendChild(deleteBtn);
+            deleteBtn.style.display = 'block';
+        }
     };
 };
 
