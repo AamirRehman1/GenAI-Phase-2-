@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     task.appendChild(inputField);
     inputField.focus();
     inputField.onblur = () => {
-        task.innerHTML = inputField.value;
+        task.textContent = inputField.value;
         if (deleteBtn) {
-            // Reinsert the delete button
-            task.appendChild(deleteBtn);
+            deleteBtn.style.display = 'block';
         }
+        task.appendChild(inputField); // Ensure input field is removed
     };
 };
 
@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     title.appendChild(inputField);
     inputField.focus();
     inputField.onblur = () => {
-        title.innerHTML = inputField.value;
+        title.textContent = inputField.value;
         if (deleteBtn) {
-            // Reinsert the delete button
-            title.appendChild(deleteBtn);
+            deleteBtn.style.display = 'block';
         }
+        title.appendChild(inputField); // Ensure input field is removed
     };
 };
 
