@@ -43,39 +43,30 @@ const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
 
-    // Disable the delete button during editing
+    // Hide the delete button during editing
     if (deleteBtn) {
-        deleteBtn.disabled = true;
+        deleteBtn.style.display = 'none';
     }
 
-    // Separate the text content from the title
     let currentText = title.childNodes[0].nodeValue.trim();
-
-    // Create and set up the input field
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'title-input';
 
-    // Replace only the text node with the input field
     title.replaceChild(inputField, title.childNodes[0]);
     inputField.focus();
 
-    // Define what happens when editing is finished
     inputField.onblur = () => {
-        // Replace input field with new text content
         let newText = document.createTextNode(inputField.value);
         title.replaceChild(newText, inputField);
 
-        // Re-enable and ensure visibility of the delete button
+        // Make the delete button visible again after editing
         if (deleteBtn) {
-            deleteBtn.disabled = false;
             deleteBtn.style.display = 'block';
         }
     };
 };
-
-
 
     
     if (projectNameForm) {
