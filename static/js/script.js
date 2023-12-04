@@ -1,14 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
-
     const editTask = (event) => {
     let task = event.target.closest('.editable');
-    let textSpan = task.querySelector('span') || document.createElement('span');
-    if (!textSpan.parentNode) {
-        task.insertBefore(textSpan, task.firstChild); // Insert span as the first child if not already present
-    }
-    let currentText = textSpan.textContent;
+    let textSpan = task.querySelector('span');
+    let currentText = textSpan.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
@@ -18,17 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.focus();
     inputField.onblur = () => {
         textSpan.textContent = inputField.value; // Update text content of the span
+        // Reattach event listeners if needed
     };
 };
 
+
     const editTitle = (event) => {
     let title = event.target.closest('.editable-title');
-    let textSpan = title.querySelector('span') || document.createElement('span');
-    if (!textSpan.parentNode) {
-        title.insertBefore(textSpan, title.firstChild); // Insert span as the first child if not already present
-    }
-    let currentText = textSpan.textContent;
-
+    let textSpan = title.querySelector('span');
+    let currentText = textSpan.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
@@ -36,11 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     textSpan.innerHTML = '';
     textSpan.appendChild(inputField);
     inputField.focus();
-
     inputField.onblur = () => {
         textSpan.textContent = inputField.value; // Update text content of the span
+        // Reattach event listeners if needed
     };
 };
+
 
 
     
