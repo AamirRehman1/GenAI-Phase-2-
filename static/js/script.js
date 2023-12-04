@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
+    // Temporarily remove the delete button
     if (deleteBtn) {
-        // Temporarily remove the delete button
         task.removeChild(deleteBtn);
     }
     // Capture the text content with the delete button removed
@@ -20,14 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.focus();
     inputField.onblur = () => {
         task.textContent = inputField.value;
+        // Reinsert the delete button
         if (deleteBtn) {
-            deleteBtn.style.display = 'block';
+            task.appendChild(deleteBtn);
         }
-        task.appendChild(inputField); // Ensure input field is removed
     };
 };
-
-
 
     const editTitle = (event) => {
     let title = event.target;
@@ -47,13 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.focus();
     inputField.onblur = () => {
         title.textContent = inputField.value;
+        // Reinsert the delete button
         if (deleteBtn) {
-            deleteBtn.style.display = 'block';
+            title.appendChild(deleteBtn);
         }
-        title.appendChild(inputField); // Ensure input field is removed
     };
 };
-
     
     if (projectNameForm) {
         projectNameForm.onsubmit = (e) => {
