@@ -1,42 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
+
     const editTask = (event) => {
-    let task = event.target.closest('.editable');
-    let textSpan = task.querySelector('span');
-    let currentText = textSpan.textContent.trim();
+    let task = event.target;
+    let deleteBtn = task.querySelector('.delete-btn');
+    if (deleteBtn) {
+        // Temporarily remove the delete button
+        task.removeChild(deleteBtn);
+    }
+    // Capture the text content with the delete button removed
+    let currentText = task.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'task-input';
-    textSpan.innerHTML = '';
-    textSpan.appendChild(inputField);
+    task.innerHTML = '';
+    task.appendChild(inputField);
     inputField.focus();
     inputField.onblur = () => {
-        textSpan.textContent = inputField.value; // Update text content of the span
-        // Reattach event listeners if needed
+        task.innerHTML = inputField.value;
+        if (deleteBtn) {
+            // Reinsert the delete button
+            task.appendChild(deleteBtn);
+        }
     };
 };
 
 
+
     const editTitle = (event) => {
-    let title = event.target.closest('.editable-title');
-    let textSpan = title.querySelector('span');
-    let currentText = textSpan.textContent.trim();
+    let title = event.target;
+    let deleteBtn = title.querySelector('.delete-btn');
+    if (deleteBtn) {
+        // Temporarily remove the delete button
+        title.removeChild(deleteBtn);
+    }
+    // Capture the text content with the delete button removed
+    let currentText = title.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'title-input';
-    textSpan.innerHTML = '';
-    textSpan.appendChild(inputField);
+    title.innerHTML = '';
+    title.appendChild(inputField);
     inputField.focus();
     inputField.onblur = () => {
-        textSpan.textContent = inputField.value; // Update text content of the span
-        // Reattach event listeners if needed
+        title.innerHTML = inputField.value;
+        if (deleteBtn) {
+            // Reinsert the delete button
+            title.appendChild(deleteBtn);
+        }
     };
 };
-
-
 
     
     if (projectNameForm) {
