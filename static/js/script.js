@@ -42,31 +42,27 @@ document.addEventListener('DOMContentLoaded', () => {
 const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
-
     // Hide the delete button during editing
     if (deleteBtn) {
         deleteBtn.style.display = 'none';
     }
-
     let currentText = title.childNodes[0].nodeValue.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'title-input';
-
     title.replaceChild(inputField, title.childNodes[0]);
     inputField.focus();
-
     inputField.onblur = () => {
         let newText = document.createTextNode(inputField.value);
         title.replaceChild(newText, inputField);
-
-        // Make the delete button visible again after editing
+        // Reset the delete button style to default after editing
         if (deleteBtn) {
-            deleteBtn.style.display = 'block';
+            deleteBtn.style.display = '';
         }
     };
 };
+
 
     
     if (projectNameForm) {
