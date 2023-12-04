@@ -143,42 +143,17 @@ const editTitle = (event) => {
     });
 
     // Event Delegation for Editable Tasks and Titles
-    document.getElementById('wbs-row').addEventListener('click', function(event) {
-        // Check if the clicked element is an editable task
-        if (event.target && event.target.classList.contains('editable')) {
-            // Call editTask function or its logic here
-            let task = event.target;
-            let currentText = task.textContent;
-            let inputField = document.createElement('input');
-            inputField.type = 'text';
-            inputField.value = currentText;
-            inputField.className = 'task-input';
-            task.innerHTML = '';
-            task.appendChild(inputField);
-            inputField.focus();
+document.getElementById('wbs-row').addEventListener('click', function(event) {
+    // Check if the clicked element is an editable task
+    if (event.target && event.target.classList.contains('editable')) {
+        editTask(event);
+    }
 
-            inputField.onblur = () => {
-                task.innerHTML = inputField.value;
-            };
-        }
+    // Check if the clicked element is an editable title
+    if (event.target && event.target.classList.contains('editable-title')) {
+        editTitle(event);
+    }
+});
 
-        // Check if the clicked element is an editable title
-        if (event.target && event.target.classList.contains('editable-title')) {
-            // Call editTitle function or its logic here
-            let title = event.target;
-            let currentText = title.textContent;
-            let inputField = document.createElement('input');
-            inputField.type = 'text';
-            inputField.value = currentText;
-            inputField.className = 'title-input';
-            title.innerHTML = '';
-            title.appendChild(inputField);
-            inputField.focus();
-
-            inputField.onblur = () => {
-                title.innerHTML = inputField.value;
-            };
-        }
-    });
 
 });
