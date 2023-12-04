@@ -18,8 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.focus();
     inputField.onblur = () => {
         task.textContent = inputField.value;
-            task.appendChild(deleteBtn);
-            deleteBtn.style.display = 'block';
+        // Create and append the delete button for each task
+        var deleteBtnTask = document.createElement('button');
+        deleteBtnTask.className = 'delete-btn';
+        deleteBtnTask.textContent = 'x';
+        newTask.appendChild(deleteBtnTask);
+        newColumn.appendChild(newTask);
+        newTask.addEventListener('click', editTask);
     };
 };
 
