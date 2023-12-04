@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
-    // Temporarily remove the delete button
     if (deleteBtn) {
-        task.removeChild(deleteBtn);
+        deleteBtn.style.display = 'none';
     }
-    // Capture the text content with the delete button removed
     let currentText = task.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
@@ -20,21 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.focus();
     inputField.onblur = () => {
         task.textContent = inputField.value;
-        // Reinsert the delete button
         if (deleteBtn) {
             task.appendChild(deleteBtn);
+            deleteBtn.style.display = 'block';
         }
     };
 };
 
-    const editTitle = (event) => {
+const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
     if (deleteBtn) {
-        // Temporarily remove the delete button
-        title.removeChild(deleteBtn);
+        deleteBtn.style.display = 'none';
     }
-    // Capture the text content with the delete button removed
     let currentText = title.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
@@ -45,12 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.focus();
     inputField.onblur = () => {
         title.textContent = inputField.value;
-        // Reinsert the delete button
         if (deleteBtn) {
             title.appendChild(deleteBtn);
+            deleteBtn.style.display = 'block';
         }
     };
 };
+
     
     if (projectNameForm) {
         projectNameForm.onsubmit = (e) => {
