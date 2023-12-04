@@ -18,10 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.focus();
     inputField.onblur = () => {
         task.textContent = inputField.value;
-        if (deleteBtn) {
             task.appendChild(deleteBtn);
             deleteBtn.style.display = 'block';
-        }
     };
 };
 
