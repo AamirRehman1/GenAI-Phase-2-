@@ -2,51 +2,44 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Script loaded and DOM fully loaded");
     const projectNameForm = document.getElementById('project-name-form');
 
-    const editTask = (event) => {
+   const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
-    if (deleteBtn) {
-        deleteBtn.style.display = 'none';
-    }
     let currentText = task.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'task-input';
     task.innerHTML = '';
+    if (deleteBtn) {
+        task.appendChild(deleteBtn);
+    }
     task.appendChild(inputField);
     inputField.focus();
     inputField.onblur = () => {
         task.textContent = inputField.value;
-        if (deleteBtn) {
-            task.appendChild(deleteBtn);
-            deleteBtn.style.display = 'block';
-        }
     };
 };
 
 const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
-    if (deleteBtn) {
-        deleteBtn.style.display = 'none';
-    }
     let currentText = title.textContent.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'title-input';
     title.innerHTML = '';
+    if (deleteBtn) {
+        title.appendChild(deleteBtn);
+    }
     title.appendChild(inputField);
     inputField.focus();
     inputField.onblur = () => {
         title.textContent = inputField.value;
-        if (deleteBtn) {
-            title.appendChild(deleteBtn);
-            deleteBtn.style.display = 'block';
-        }
     };
 };
+
 
     
     if (projectNameForm) {
