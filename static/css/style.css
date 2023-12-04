@@ -147,9 +147,11 @@ body {
     height: 16px;
     cursor: pointer;
     display: none; /* Hide by default */
+    z-index: 10; /* Ensure it's above other elements */
 }
 
 .wbs-phase-title:hover .delete-btn,
 .wbs-task:hover .delete-btn {
     display: block; /* Show on hover */
 }
+
