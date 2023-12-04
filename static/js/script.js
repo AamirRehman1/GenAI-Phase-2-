@@ -5,28 +5,39 @@ document.addEventListener('DOMContentLoaded', () => {
    const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
+
+    // Disable the delete button during editing
     if (deleteBtn) {
-        deleteBtn.style.display = 'none';
+        deleteBtn.disabled = true;
     }
-    let currentText = task.textContent.trim();
+
+    // Separate the text content from the task
+    let currentText = task.childNodes[0].nodeValue.trim();
+
+    // Create and set up the input field
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'task-input';
-    task.innerHTML = '';
-    task.appendChild(inputField);
+
+    // Replace only the text node with the input field
+    task.replaceChild(inputField, task.childNodes[0]);
     inputField.focus();
+
+    // Define what happens when editing is finished
     inputField.onblur = () => {
-        task.textContent = inputField.value;
-        // Create and append the delete button for each task
-        var deleteBtnTask = document.createElement('button');
-        deleteBtnTask.className = 'delete-btn';
-        deleteBtnTask.textContent = 'x';
-        newTask.appendChild(deleteBtnTask);
-        newColumn.appendChild(newTask);
-        newTask.addEventListener('click', editTask);
+        // Replace input field with new text content
+        let newText = document.createTextNode(inputField.value);
+        task.replaceChild(newText, inputField);
+
+        // Re-enable and ensure visibility of the delete button
+        if (deleteBtn) {
+            deleteBtn.disabled = false;
+            deleteBtn.style.display = 'block';
+        }
     };
 };
+
 
 const editTitle = (event) => {
     let title = event.target;
