@@ -5,38 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
    const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
-
-    // Disable the delete button during editing
+    // Hide the delete button during editing
     if (deleteBtn) {
-        deleteBtn.disabled = true;
+        deleteBtn.style.display = 'none';
     }
-
-    // Separate the text content from the task
     let currentText = task.childNodes[0].nodeValue.trim();
-
-    // Create and set up the input field
     let inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.value = currentText;
     inputField.className = 'task-input';
-
-    // Replace only the text node with the input field
     task.replaceChild(inputField, task.childNodes[0]);
     inputField.focus();
-
-    // Define what happens when editing is finished
     inputField.onblur = () => {
-        // Replace input field with new text content
         let newText = document.createTextNode(inputField.value);
         task.replaceChild(newText, inputField);
-
-        // Re-enable and ensure visibility of the delete button
+        // Reset the delete button style to default after editing
         if (deleteBtn) {
-            deleteBtn.disabled = false;
-            deleteBtn.style.display = 'block';
+            deleteBtn.style.display = '';
         }
     };
 };
+
 
 
 const editTitle = (event) => {
