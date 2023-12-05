@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const editTask = (event) => {
     let task = event.target;
     let deleteBtn = task.querySelector('.delete-btn');
-    // Hide the delete button during editing
-    if (deleteBtn) {
-        deleteBtn.style.display = 'none';
-    }
+    deleteBtn.style.display = 'none';
     let currentText = task.childNodes[0].nodeValue.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
@@ -16,25 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.className = 'task-input';
     task.replaceChild(inputField, task.childNodes[0]);
     inputField.focus();
-    inputField.onblur = () => {
+    const finishEditing = () => {
         let newText = document.createTextNode(inputField.value);
         task.replaceChild(newText, inputField);
-        // Reset the delete button style to default after editing
         if (deleteBtn) {
             deleteBtn.style.display = '';
         }
     };
+    inputField.onblur = finishEditing;
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            finishEditing();
+        }
+    });
 };
+
 
 
 
 const editTitle = (event) => {
     let title = event.target;
     let deleteBtn = title.querySelector('.delete-btn');
-    // Hide the delete button during editing
-    if (deleteBtn) {
-        deleteBtn.style.display = 'none';
-    }
+    deleteBtn.style.display = 'none';
     let currentText = title.childNodes[0].nodeValue.trim();
     let inputField = document.createElement('input');
     inputField.type = 'text';
@@ -42,15 +42,21 @@ const editTitle = (event) => {
     inputField.className = 'title-input';
     title.replaceChild(inputField, title.childNodes[0]);
     inputField.focus();
-    inputField.onblur = () => {
+    const finishEditing = () => {
         let newText = document.createTextNode(inputField.value);
         title.replaceChild(newText, inputField);
-        // Reset the delete button style to default after editing
         if (deleteBtn) {
             deleteBtn.style.display = '';
         }
     };
+    inputField.onblur = finishEditing;
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            finishEditing();
+        }
+    });
 };
+
 
 
     
