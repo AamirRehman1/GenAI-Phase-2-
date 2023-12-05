@@ -153,3 +153,11 @@ body {
 .wbs-task:hover .delete-btn {
     display: block; /* Show on hover */
 }
+
+.project-entry-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; /* Adjust the width as needed */
+    max-width: 600px; /* Optional: Sets a maximum width */
+}
