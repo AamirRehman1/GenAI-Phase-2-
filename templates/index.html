@@ -12,8 +12,8 @@
         <form id="project-name-form" action="/create_project" method="post">
             <label for="project-name">Enter Project Name:</label>
             <input type="text" id="project-name" name="project_name" required>
-            <img src="{{ url_for('static', filename='images/wbs_example.jpg') }}" alt="Example of a WBS">
             <button type="submit">Create Project</button>
+            <img src="{{ url_for('static', filename='images/wbs_example.jpg') }}" alt="Example of a WBS">
         </form>
     </div>
 </body>
