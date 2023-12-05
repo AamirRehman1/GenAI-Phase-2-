@@ -159,7 +159,6 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%; /* Adjust the width as needed */
-    max-width: 1200px; /* Optional: Sets a maximum width */
+    width: 80%; /* Adjust the width as needed */
     padding: 40px;
 }
