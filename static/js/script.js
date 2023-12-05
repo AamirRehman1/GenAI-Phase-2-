@@ -118,6 +118,11 @@ const editTitle = (event) => {
         let newTask = document.createElement('div');
         newTask.className = 'wbs-task editable';
         newTask.textContent = 'Task';
+        // Create and append the delete button for each task
+        var deleteBtnTask = document.createElement('button');
+        deleteBtnTask.className = 'delete-btn';
+        deleteBtnTask.textContent = 'x';
+        newTask.appendChild(deleteBtnTask);
         column.insertBefore(newTask, this);
     });
 });
@@ -130,6 +135,12 @@ const editTitle = (event) => {
             let newTask = document.createElement('div');
             newTask.className = 'wbs-task editable';
             newTask.textContent = 'Task';
+            // Create and append the delete button for each task
+            var deleteBtnTask = document.createElement('button');
+            deleteBtnTask.className = 'delete-btn';
+            deleteBtnTask.textContent = 'x';
+            newTask.appendChild(deleteBtnTask);
+            column.insertBefore(newTask, this);
              column.insertBefore(newTask, this); // Append the new task to the column
         });
     });
