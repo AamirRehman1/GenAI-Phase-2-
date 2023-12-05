@@ -168,6 +168,6 @@ body {
     font-weight: bold; /* Makes the font bold */
     text-align: center; /* Centers the text */
     font-size: 2em;    /* Adjusts the font size */
-    margin-top: 45px;
-    font-family: Helvetica, sans-serif;
+    margin-top: 60px;
+    font-family: 'Book Antiqua', Palatino, serif;
 }
