@@ -160,7 +160,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 70%; /* Adjust the width as needed */
-    padding: 10px;
+    padding: 5px;
 }
 
 #wbs-title {
@@ -168,6 +168,6 @@ body {
     font-weight: bold; /* Makes the font bold */
     text-align: center; /* Centers the text */
     font-size: 2em;    /* Adjusts the font size */
-    margin-top: 30px;
-    font-family:'Comic Sans MS', cursive;
+    margin-top: 45px;
+    font-family: Helvetica, sans-serif;
 }
